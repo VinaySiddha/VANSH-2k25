@@ -185,7 +185,7 @@ pool.getConnection()
 
 const app = express();
 
-app.use(cors({ origin: 'https://vansh-2k25-qr2uhdlqc-vinay-siddhas-projects.vercel.app' }));
+// app.use(cors({ origin: 'https://vansh-2k25-qr2uhdlqc-vinay-siddhas-projects.vercel.app' }));
 app.use(express.json());
 
 // Add this near your other middleware
@@ -327,7 +327,7 @@ app.get('/api/download-pdf/:ackId', (req, res) => {
     }
 });
 
-const PORT = 3000;
+const PORT = 5000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
