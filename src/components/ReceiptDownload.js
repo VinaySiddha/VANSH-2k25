@@ -17,6 +17,8 @@ const ReceiptDownload = () => {
 
     setLoading(true);
     try {
+
+      
       const response = await axios.get(`https://vansh-2k25.onrender.com/api/download-pdf/${receiptName}`, {
         responseType: 'blob',
         headers: {
