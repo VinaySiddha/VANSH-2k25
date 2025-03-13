@@ -185,7 +185,7 @@ pool.getConnection()
 
 const app = express();
 
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: 'https://vansh-2k25-qr2uhdlqc-vinay-siddhas-projects.vercel.app' }));
 app.use(express.json());
 
 // Add this near your other middleware
