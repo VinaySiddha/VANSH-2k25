@@ -164,7 +164,7 @@ const eventsList = [
   },
 ];
 const pool = mysql.createPool({
-    host: 'vansh2k25.database.windows.net,',
+    host: 'vansh2k25.database.windows.net',
     user: 'vinay',
     password: 'Megha@1705',
     database: 'event_registration',
