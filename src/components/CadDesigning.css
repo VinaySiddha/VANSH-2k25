@@ -1,0 +1,170 @@
+.cad-designing-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: "Big Shoulders", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: white;
+}
+
+h2 {
+    font-family: "Big Shoulders", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.registrations-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.registrations-table th {
+    background-color: #3498db;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 1.1rem;
+    font-optical-sizing: auto;
+}
+
+.registrations-table td {
+    font-size: 1rem;
+    font-weight: 500;
+    font-optical-sizing: auto;
+}
+
+.registrations-table th,
+.registrations-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.loading, .error, .no-data {
+    font-family: "Big Shoulders", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+/* Keep your existing mobile styles */
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    .registrations-table th {
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+    .registrations-table td {
+        font-weight: 400;
+        font-size: 0.9rem;
+    }
+}.cad-designing-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: "Big Shoulders", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+h2 {
+    font-family: "Big Shoulders", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.registrations-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.registrations-table th {
+    background-color: #3498db;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 1.1rem;
+    font-optical-sizing: auto;
+}
+
+.registrations-table td {
+    font-size: 1rem;
+    font-weight: 500;
+    font-optical-sizing: auto;
+}
+
+.registrations-table th,
+.registrations-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.loading, .error, .no-data {
+    font-family: "Big Shoulders", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+/* Keep your existing mobile styles */
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    .registrations-table th {
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+    .registrations-table td {
+        font-weight: 400;
+        font-size: 0.9rem;
+    }
+}
