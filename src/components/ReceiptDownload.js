@@ -17,7 +17,7 @@ const ReceiptDownload = () => {
 
     setLoading(true);
     try {
-      const response = await axios.get(`http://localhost:5000/api/download-pdf/${receiptName}`, {
+      const response = await axios.get(`https://vvansh-2k25-welk.vercel.app/api/download-pdf/${receiptName}`, {
         responseType: 'blob',
         headers: {
           'Accept': 'application/pdf'
