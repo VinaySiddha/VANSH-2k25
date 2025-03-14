@@ -185,11 +185,33 @@ pool.getConnection()
 
 const app = express();
 
+// const corsOptions = {
+//   origin: 'https://vansh-2k25.vercel.app/',
+//   methods: ['GET', 'POST'],
+//   allowedHeaders: ['Content-Type'],
+// };
+
+
 const corsOptions = {
-  origin: 'https://vansh-2k25.vercel.app/',
+  origin: function (origin, callback) {
+    const allowedOrigins = [
+      'http://localhost:3001',
+      'https://vansh-2k25.vercel.app',  // URL 1
+      'https://vansh-2k25-git-main-vinay-siddhas-projects.vercel.app',    // URL 2 (example)
+      'https://vansh-2k25-c1qpn0zc7-vinay-siddhas-projects.vercel.app'     // URL 3 (example)
+    ];
+
+    // Check if the origin matches one of the allowed URLs
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);  // Allow the request
+    } else {
+      callback(new Error('Not allowed by CORS'));  // Deny the request
+    }
+  },
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'],
 };
+app.use(cors(corsOptions));
 
 app.use(cors(corsOptions))
 
