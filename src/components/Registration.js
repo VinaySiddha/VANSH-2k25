@@ -225,7 +225,7 @@ function Registration() {
     if (validateForm()) {
       try {
         console.log('Submitting form data:', formData);
-        const response = await axios.post('https://vansh-2k25.onrender.com/api/register', formData);
+        const response = await axios.post('http://vansh-2k25.onrender.com/api/register', formData);
         
         if (response.data.acknowledgementId) {
           setMessage('Registration successful!');
@@ -244,7 +244,7 @@ function Registration() {
 
           // Download PDF after successful registration
           try {
-            const pdfResponse = await axios.get(`https://vansh-2k25.onrender.com/api/download-pdf/${response.data.formattedAckId}`, {
+            const pdfResponse = await axios.get(`http://vansh-2k25.onrender.com/api/download-pdf/${response.data.formattedAckId}`, {
               responseType: 'blob'
             });
             

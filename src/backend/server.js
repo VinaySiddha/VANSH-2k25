@@ -185,6 +185,14 @@ pool.getConnection()
 
 const app = express();
 
+const corsOptions = {
+  origin: 'https://vansh-2k25.vercel.app/',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+};
+
+app.use(cors(corsOptions))
+
 // app.use(cors({ origin: 'https://vansh-2k25-qr2uhdlqc-vinay-siddhas-projects.vercel.app' }));
 app.use(express.json());
 
