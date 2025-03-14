@@ -9,7 +9,7 @@ function CadDesigning() {
 
     useEffect(() => {
         setLoading(true);
-        fetch('http://localhost:5000/api/registrations/by-event/VHACK2k25')
+        fetch('http://vansh-2k25.onrender.com/api/registrations/by-event/VHACK2k25')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
