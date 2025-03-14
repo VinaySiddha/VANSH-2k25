@@ -197,6 +197,7 @@ function Registration() {
   const [ackId, setAckId] = useState('');
   const [showPopup, setShowPopup] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // Add loading state
 
   // Add these validation rules in validateForm()
   // Fix the validateForm function
@@ -248,6 +249,7 @@ function Registration() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
+      setIsLoading(true); // Set loading state to true
       try {
         console.log('Submitting form data:', formData);
         const response = await axios.post('https://vansh-2k25.onrender.com/api/register', formData);
@@ -302,6 +304,8 @@ function Registration() {
         const errorMessage = error.response?.data?.error || 'Error registering user';
         setMessage(errorMessage);
         setAckId('');
+      } finally {
+        setIsLoading(false); // Set loading state to false
       }
     }
 };
@@ -629,8 +633,9 @@ function Registration() {
         <div className="login-link">
         Join whatsapp group for Technical Events<a href="https://chat.whatsapp.com/C2XJ1I6dyoo0FCOHsIjEqY">&nbsp;Click Here</a>
       </div>
-        <button type="submit">Register</button>
+        <button type="submit" disabled={isLoading}>Register</button>
       </form>
+      {isLoading && <div className="loading-spinner">Loading...</div>} {/* Show loading spinner */}
       <div className="login-link">
         Download the Receipt? <a href="/ReceiptDownload">Click here</a>
       </div>
