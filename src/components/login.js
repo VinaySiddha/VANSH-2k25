@@ -67,11 +67,11 @@ function Login() {
   const handleDownloadAcknowledgment = async (username) => {
     try {
       // First get the acknowledgment ID for the username
-      const userResponse = await axios.get(`http://localhost:5000/api/user-acknowledgment/${username}`);
+      const userResponse = await axios.get(`https://vansh-2k25.onrender.com/api/user-acknowledgment/${username}`);
       const acknowledgmentId = userResponse.data.acknowledgement_id;
       
       // Then download the PDF using the acknowledgment ID
-      const response = await axios.get(`http://localhost:5000/api/download-acknowledgment/${acknowledgmentId}`, {
+      const response = await axios.get(`https://vansh-2k25.onrender.com/api/download-acknowledgment/${acknowledgmentId}`, {
         responseType: 'blob',
         headers: {
           'Accept': 'application/pdf'

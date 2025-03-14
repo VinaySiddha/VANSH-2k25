@@ -14,12 +14,25 @@ const eventsList = [
     noParticipants: 2,
     type: 'TECHNICAL'
   },
-  { 
+ {
     name: 'CODERS',
     fee: 100,
-    noParticipants: 4,
+    noParticipants: 1,
     type: 'TECHNICAL'
   },
+  {
+    name: 'MR_MS_CODING',
+    fee: 100,
+    noParticipants: 1,
+    type: 'TECHNICAL'
+  },
+  {
+    name: 'AI_ARENA',
+    fee: 100,
+    noParticipants: 2,
+    type: 'TECHNICAL'
+  },
+ 
   { 
     name: 'CODING_RELAY',
     fee: 100,
@@ -149,12 +162,20 @@ const eventsList = [
     description: 'Coding Competition'
   },
   { 
-    name: 'CREATIVE_WRITING&POETRY',
+    name: 'CREATIVE_WRITING',
     fee: 50,
     noParticipants: 1,
     type: 'LITERARY',
     description: 'Coding Competition'
   },
+  { 
+    name: 'CREATIVE_POETRY',
+    fee: 50,
+    noParticipants: 1,
+    type: 'LITERARY',
+    description: 'Coding Competition'
+  },
+  
   { 
     name: 'JAM',
     fee: 50,
@@ -164,10 +185,10 @@ const eventsList = [
   },
 ];
 const pool = mysql.createPool({
-    host: 'sql12.freesqldatabase.com',
-    user: 'sql12767552',
-    password: 'PfujIX53NR',
-    database: 'sql12767552',
+    host: '148.66.136.53', // Change if your DB is remote
+    user: 'sveccollege',
+    password: 'Svec@123456',
+    database: 'sveccollege',
     waitForConnections: true,
     connectionLimit: 10000,
     queueLimit: 0
@@ -184,13 +205,6 @@ pool.getConnection()
     });
 
 const app = express();
-
-// const corsOptions = {
-//   origin: 'https://vansh-2k25.vercel.app/',
-//   methods: ['GET', 'POST'],
-//   allowedHeaders: ['Content-Type'],
-// };
-
 
 const corsOptions = {
   origin: function (origin, callback) {
@@ -213,9 +227,6 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-app.use(cors(corsOptions))
-
-// app.use(cors({ origin: 'https://vansh-2k25-qr2uhdlqc-vinay-siddhas-projects.vercel.app' }));
 app.use(express.json());
 
 // Add this near your other middleware
@@ -260,7 +271,7 @@ app.post('/api/register', async (req, res) => {
 
         // Database insert
         const [result] = await pool.execute(
-          `INSERT INTO users 
+          `INSERT INTO user 
           (username, collegename, email, phonenumber, events, total_amount, utrid) 
           VALUES (?, ?, ?, ?, ?, ?, ?)`,
           [username, collegename, email, phoneNumber, eventsString, totalAmount, utrid]
@@ -272,7 +283,7 @@ app.post('/api/register', async (req, res) => {
 
         // Update the record with the formatted acknowledgment ID
         await pool.execute(
-            'UPDATE users SET acknowledgment_id = ? WHERE id = ?',
+            'UPDATE user SET acknowledgment_id = ? WHERE id = ?',
             [formattedAckId, result.insertId]
         );
 
@@ -368,10 +379,10 @@ app.get('/api/registrations/by-event/:eventName', async (req, res) => {
         const eventName = req.params.eventName;
         console.log('Fetching registrations for event:', eventName);
 
-        // Query to find users who registered for a specific event
+        // Query to find user who registered for a specific event
         const [rows] = await pool.execute(
             `SELECT username, collegename, email, phonenumber, events, total_amount 
-             FROM users 
+             FROM user 
              WHERE FIND_IN_SET(?, events) > 0`,
             [eventName]
         );

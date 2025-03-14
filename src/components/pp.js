@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-
 import './CadDesigning.css';
 
-function CadDesigning() {
+function PosterPresentation() {
     const [registrations, setRegistrations] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -17,7 +16,7 @@ function CadDesigning() {
                 return response.json();
             })
             .then(data => {
-                console.log('Received data:', data); // Debug log
+                console.log('Received data:', data);
                 if (data.success) {
                     setRegistrations(data.registrations);
                 } else {
@@ -37,7 +36,7 @@ function CadDesigning() {
 
     return (
         <div className="cad-designing-container">
-            <h2>CAD Designing Registrations</h2>
+            <h2>Poster Presentation Registrations</h2>
             <div className="table-container">
                 <table className="registrations-table">
                     <thead>
@@ -64,4 +63,4 @@ function CadDesigning() {
     );
 }
 
-export default CadDesigning;
+export default PosterPresentation;

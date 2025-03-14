@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './CadDesigning.css';
 
-function PosterPresentation() {
+function Drama() {
     const [registrations, setRegistrations] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
         setLoading(true);
-        fetch('https://vansh-2k25.onrender.com/api/registrations/by-event/PAPER_PRESENTATION')
+        fetch('https://vansh-2k25.onrender.com/api/registrations/by-event/DRAMA')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -36,7 +36,7 @@ function PosterPresentation() {
 
     return (
         <div className="cad-designing-container">
-            <h2>Poster Presentation Registrations</h2>
+            <h2>Drama Event Registrations</h2>
             <div className="table-container">
                 <table className="registrations-table">
                     <thead>
@@ -63,4 +63,4 @@ function PosterPresentation() {
     );
 }
 
-export default PosterPresentation;
+export default Drama;

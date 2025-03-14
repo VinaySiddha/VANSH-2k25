@@ -9,6 +9,7 @@ const eventsList = [
     type: 'TECHNICAL',
     description: 'CAD Designing Competition'
   },
+  
     { 
     name: 'CODING_RELAY',
     fee: 100,
@@ -44,8 +45,26 @@ const eventsList = [
     type: 'TECHNICAL',
     description: 'Technical Poster Presentation'
   },
+  {
+    name: 'CODERS',
+    fee: 100,
+    noParticipants: 1,
+    type: 'TECHNICAL'
+  },
+  {
+    name: 'AI_ARENA',
+    fee: 100,
+    noParticipants: 2,
+    type: 'TECHNICAL'
+  },
+  {
+    name: 'MR_MS_CODING',
+    fee: 100,
+    noParticipants: 2,
+    type: 'TECHNICAL'
+  },
   { 
-    name: 'V\'HACK 2k25',
+    name: 'VHACK2k25',
     fee: 300,
     noParticipants: 4,
     type: 'TECHNICAL',
@@ -131,12 +150,18 @@ const eventsList = [
   { 
     name: 'QUIZ',
     fee: 200,
-    noParticipants: 1,
+    noParticipants: 4,
     type: 'ART',
+    description: 'Coding Competition'
+  },{ 
+    name: 'CREATIVE_WRITING',
+    fee: 50,
+    noParticipants: 1,
+    type: 'LITERARY',
     description: 'Coding Competition'
   },
   { 
-    name: 'CREATIVE_WRITING_&POETRY',
+    name: 'CREATIVE_POETRY',
     fee: 50,
     noParticipants: 1,
     type: 'LITERARY',
@@ -342,12 +367,12 @@ function Registration() {
       {message && <div className="message">{message}</div>}
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="username" className="form-label">Username</label>
+          <label htmlFor="username" className="form-label">Name</label>
           <input
             id="username"
             type="text"
             name="username"
-            placeholder="Enter your username"
+            placeholder="Enter your name"
             value={formData.username}
             onChange={handleChange}
             required
@@ -599,7 +624,10 @@ function Registration() {
           {errors.utrid && <div className="error-message">{errors.utrid}</div>}
         </div>
         <div className="login-link">
-        <a id="a" href="https://chat.whatsapp.com/C5ooZbhNxo71w3G7Hwevyn">whatsapp group for Art & Literary events</a>
+        Join whatsapp group for Art & Literary Events<a href="https://chat.whatsapp.com/C5ooZbhNxo71w3G7Hwevyn">&nbsp;Click Here</a>
+        </div>
+        <div className="login-link">
+        Join whatsapp group for Technical Events<a href="https://chat.whatsapp.com/C2XJ1I6dyoo0FCOHsIjEqY">&nbsp;Click Here</a>
       </div>
         <button type="submit">Register</button>
       </form>
