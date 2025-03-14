@@ -9,7 +9,7 @@ function CadDesigning() {
 
     useEffect(() => {
         setLoading(true);
-        fetch('http://vansh-2k25.onrender.com/api/registrations/by-event/CODING_RELAY')
+        fetch('https://vansh-2k25.onrender.com/api/registrations/by-event/CODING_RELAY')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');

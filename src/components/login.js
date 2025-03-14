@@ -17,7 +17,7 @@ function Login() {
     e.preventDefault();
     if (validateForm()) {
       try {
-        const response = await axios.post('http://vansh-2k25.onrender.com/api/login', formData);
+        const response = await axios.post('https://vansh-2k25.onrender.com/api/login', formData);
         
         if (response.data.success) {
           setMessage('Login successful!');
